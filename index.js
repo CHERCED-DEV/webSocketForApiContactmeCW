@@ -10,6 +10,11 @@ dbConnect();
 
 const apiContactMe = express();
 
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
+
 const serverHttp = http.createServer(apiContactMe);
 const io = new WebSocketServer(serverHttp);
 let numNewMessages = 0;
@@ -43,4 +48,3 @@ apiContactMe.post("/api/contactMe", async (req, res) => {
 });
 
 apiContactMe.use(cors({ origin: CORS }));
-apiContactMe.listen(3000);
