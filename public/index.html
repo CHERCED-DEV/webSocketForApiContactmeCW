@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXTERN AGENT || WEBSOCKETS AND APIS</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto 10%;
+            text-align: left;
+        }
+
+        h2 {
+            color: #e6af2e;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: #a9c6d9;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        h4 {
+            color: #bfbfbf;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        code {
+            background-color: #555;
+            color: #fff;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            padding: 2px 5px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h2>Endpoints</h2>
+    <p>La API de Contacto tiene los siguientes endpoints:</p>
+    <ul>
+        <li><code>GET /api/contactMe</code>: Devuelve una lista de todos los mensajes enviados.</li>
+        <li><code>POST /api/contactMe</code>: Envía un nuevo mensaje de contacto.</li>
+    </ul>
+    <h3>GET /api/contactMe</h3>
+    <p>El endpoint <code>GET /api/contactMe</code> devuelve una lista de todos los mensajes enviados a través de la API.
+        Los mensajes se devuelven en formato JSON.</p>
+    <h4>Parámetros de entrada</h4>
+    <p>Este endpoint no acepta parámetros de entrada.</p>
+    <h4>Respuesta</h4>
+    <p>Este endpoint devuelve una lista de objetos JSON que representan los mensajes enviados a través de la API. Cada
+        objeto tiene los siguientes campos:</p>
+    <ul>
+        <li><code>name</code>: El nombre del remitente.</li>
+        <li><code>email</code>: La dirección de correo electrónico del remitente.</li>
+        <li><code>phone</code>: El número de teléfono del remitente.</li>
+        <li><code>message</code>: El mensaje enviado por el remitente.</li>
+        <li><code>createdAt</code>: La fecha y hora en que se envió el mensaje.</li>
+    </ul>
+    <h3>POST /api/contactMe</h3>
+    <p>El endpoint <code>POST /api/contactMe</code> permite a los usuarios enviar un nuevo mensaje de contacto a través
+        de la API. Los mensajes se guardan en una base de datos MongoDB y se transmiten a través de un socket WebSocket
+        a los clientes conectados.</p>
+    <h4>Parámetros de entrada</h4>
+    <p>Este endpoint acepta los siguientes parámetros de entrada en formato JSON:</p>
+    <ul>
+        <li><code>name</code>: El nombre del remitente.</li>
+        <li><code>email</code>: La dirección de correo electrónico del remitente.</li>
+        <li><code>phone</code>: El número de teléfono del remitente.</li>
+        <li><code>message</code>: El mensaje enviado por el remitente.</li>
+    </ul>
+    <h4>Respuesta</h4>
+    <p>Este endpoint devuelve un objeto JSON con el siguiente campo:</p>
+    <ul>
+        <li><code>message</code>: Un mensaje que indica que el mensaje se envió correctamente.</li>
+    </ul>
+    <p>¡Gracias por utilizar la API de Contacto!</p>
+</body>
+
+</html>
