@@ -1,21 +1,23 @@
-import { connect, connection } from "mongoose";
-import { uriDb } from "./config";
+const mongoose = require('mongoose');
+const { uriDb } = require('./config');
 
 const conn = {
     isConected: false,
 }
 
-export async function dbConnect() {
+async function dbConnect() {
     if (conn.isConected) return;
-    const db = await connect(uriDb || "");
+    const db = await mongoose.connect(uriDb || "");
     conn.isConected = db.connections[0].readyState ? true : false;
     console.log(db.connection.db.databaseName);
 }
 
-connection.on("connected", () => {
+mongoose.connection.on("connected", () => {
     console.log("Mongo Its Running on CHERCED WORLD!")
 });
 
-connection.on("error", (err) => {
+mongoose.connection.on("error", (err) => {
     console.log(err)
 });
+
+module.exports = dbConnect;

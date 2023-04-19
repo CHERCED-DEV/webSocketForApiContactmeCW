@@ -1,5 +1,7 @@
-import {config} from 'dotenv';
+const { config } = require('dotenv');
 config();
 
-export const uriDb = process.env.MONGODB_INTEGRAL_DB;
-export const CORS = process.env.VERCEL_URL_CORS;
+module.exports = {
+  uriDb: process.env.MONGODB_INTEGRAL_DB,
+  CORS: process.env.VERCEL_URL_CORS
+};

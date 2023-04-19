@@ -1,10 +1,10 @@
-import express from 'express';
-import http from 'http';
-import { Server as WebSocketServer } from "socket.io";
-import cors from 'cors'
-import { dbConnect } from './src/mongoose';
-import Message from './src/model/contactMe.model';
-import { CORS } from './src/config';
+const express = require('express');
+const http = require('http');
+const { Server: WebSocketServer } = require("socket.io");
+const cors = require('cors');
+const dbConnect = require('./src/mongoose.js');
+const { Message } = require('./src/model/contactMe.model');
+const { CORS } = require('dotenv').config().parsed;
 
 dbConnect();
 

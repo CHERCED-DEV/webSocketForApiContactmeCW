@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "nodemon index.js --exec babel-node"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "CHERCED",
