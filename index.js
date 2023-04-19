@@ -1,11 +1,11 @@
 const express = require('express');
-const http = require('http');
-const { Server: WebSocketServer } = require("socket.io");
+/* const http = require('http');
+const { Server: WebSocketServer } = require("socket.io"); */
 const cors = require('cors');
-const dbConnect = require('./src/mongoose.js');
+/* const dbConnect = require('./src/mongoose.js');
 const { Message } = require('./src/model/contactMe.model');
 const { CORS } = require('dotenv').config().parsed;
-
+ */
 dbConnect();
 
 const apiContactMe = express();
@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 apiContactMe.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
-
+/* 
 const serverHttp = http.createServer(apiContactMe);
 const io = new WebSocketServer(serverHttp);
 let numNewMessages = 0;
@@ -47,4 +47,4 @@ apiContactMe.post("/api/contactMe", async (req, res) => {
     res.status(201).json({ message: "Mensaje enviado exitosamente" });
 });
 
-apiContactMe.use(cors({ origin: CORS }));
+apiContactMe.use(cors({ origin: CORS })); */
